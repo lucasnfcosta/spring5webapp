@@ -2,6 +2,7 @@ package guru.springframework.spring5webapp.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import java.util.Set;
 
 @Entity
@@ -11,6 +12,7 @@ public class Author {
     private Long id;
     private String firstName;
     private String lastName;
+    @ManyToMany(mappedBy = "authors")
     private Set<Book> books;
 
     public Author(String firstName, String lastName, Set<Book> books) {
