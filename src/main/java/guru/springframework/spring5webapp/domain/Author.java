@@ -1,9 +1,14 @@
 package guru.springframework.spring5webapp.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Set;
 
+@Entity
 public class Author {
 
+    @Id
+    private Long id;
     private String firstName;
     private String lastName;
     private Set<Book> books;
